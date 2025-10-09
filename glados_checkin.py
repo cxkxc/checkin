@@ -79,7 +79,7 @@ def notify(contents):
 def main():
     result = glados_checkin()
     print(result)
-    notify(result)
+    # notify(result)
 
 if __name__ == '__main__':
     main()
