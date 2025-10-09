@@ -37,8 +37,7 @@ def glados_checkin():
         return [
             'Checkin OK',
             checkin_data.get('message', 'No message from server'),
-            # f'Left Days {status_data.get("data", {}).get("leftDays", "N/A")}',
-            status_data.get("data", {}),
+            f'Left Days {status_data.get("data", {}).get("leftDays", "N/A")}',
         ]
 
     except Exception as e:
@@ -79,7 +78,7 @@ def notify(contents):
 def main():
     result = glados_checkin()
     print(result)
-    # notify(result)
+    notify(result)
 
 if __name__ == '__main__':
     main()
