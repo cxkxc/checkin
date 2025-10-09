@@ -3,7 +3,7 @@ import requests
 
 # 签到函数，更新一下
 def glados_checkin():
-    cookie = 'koa:sess=eyJ1c2VySWQiOjU2MjA2MSwiX2V4cGlyZSI6MTc1ODYwODU4NzQwMCwiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=eKj0s-ySfgfwxtHEtHu6uVznnqM; __stripe_mid=ec8811ed-4989-4bd6-9733-98d6e1335f8117daae; _ga=GA1.1.958598174.1732687648; _ga_CZFVKMNT9J=GS1.1.1733730016.4.1.1733730585.0.0.0'
+    cookie = 'koa:sess=eyJ1c2VySWQiOjU2MjA2MSwiX2V4cGlyZSI6MTc4NTkxNzg0NzkxMywiX21heEFnZSI6MjU5MjAwMDAwMDB9; koa:sess.sig=_AAwlutBwNifN4nlBzIdxixwVZ4'
     if not cookie:
         print('GLADOS cookie not found in environment variables.')
         return ['Checkin Error', 'GLADOS cookie not found in environment variables.', '']
