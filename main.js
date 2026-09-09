@@ -16,10 +16,20 @@ const glados = async () => {
       method: 'GET',
       headers,
     }).then((r) => r.json())
+    const leftDays = status?.data?.leftDays
+    if (leftDays === undefined) {
+      return [
+        'Checkin Failed',
+        `${checkin.message}`,
+        `status: ${JSON.stringify(status).slice(0, 300)}`,
+        'Cookie 可能已过期,请重新登录后更新 GitHub Secrets 的 GLADOS',
+        `<${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}>`,
+      ]
+    }
     return [
       'Checkin OK',
       `${checkin.message}`,
-      `Left Days ${Number(status.data.leftDays)}`,
+      `Left Days ${Number(leftDays)}`,
     ]
   } catch (error) {
     return [
